@@ -25,14 +25,21 @@ export class D3VisualizationsComponent implements OnInit {
     }
 
     var linegraph = new LineGraph(selector, graphWidth, graphHeight, graphMargins);
-    var data = new Array(100);
+    var data = new Array();
+    var year = 1990;
     for(var i=0;i<100;i++){
       data.push({
-        year: Math.floor(Math.random() * 100),
+        year: year + Math.floor(Math.random() * 30),
         value: Math.floor(Math.random() * 30000)
       })
     }
+    data = data.sort((a, b)=>{
+      if(a.year < b.year) return -1;
+      if(a.year === b.year) return 0;
+      else return 1;
+    })
     linegraph.loadData(data);
+    linegraph.draw();
     
     
   }

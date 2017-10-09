@@ -48,8 +48,7 @@ export class MapComponent implements OnInit {
     
     let osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     
-    var osmLayer = new L.TileLayer(osmUrl);
-    this.map.addLayer(osmLayer);
+    var osmLayer = L.tileLayer(osmUrl).addTo(this.map);
     var streams = await this.getJSON("assets/data/parsedstreamfile.json")
     var nodes = await this.getJSON("assets/data/parsednodefile.json")
     this.streamer.LoadData( streams, nodes);
@@ -60,9 +59,14 @@ export class MapComponent implements OnInit {
         })
       }
     }).addTo(this.map);
-    //osmLayer.addTo(this.map);
+    //osmLayer.addTo(this.map);s
     
     console.timeEnd("initMap");
+
+    this.map.on("click", (e:L.LeafletMouseEvent)=>{
+      var marker = L.marker(e.latlng).bindPopup("<app-map-popup></app-map-popup>").addTo(this.map);
+      console.log(e);
+    })
   }
 
   async getJSON(path: string): Promise<any>{
@@ -74,7 +78,7 @@ export class MapComponent implements OnInit {
   
   }
 
-  async DownstreamTrace(event: L.LeafletEvent){
+  DownstreamTrace(event: L.LeafletEvent){
     var streamFeature = event.target.feature;
 
     var returnedGeojson = this.streamer.DownstreamTrace(streamFeature);
