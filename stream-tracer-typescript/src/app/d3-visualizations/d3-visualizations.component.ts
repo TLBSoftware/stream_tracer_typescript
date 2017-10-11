@@ -9,7 +9,7 @@ import * as d3 from 'd3';
   styleUrls: ['./d3-visualizations.component.css']
 })
 export class D3VisualizationsComponent implements OnInit {
-
+  private lineGraph : LineGraph;
   constructor() { }
 
   ngOnInit() {
@@ -24,7 +24,7 @@ export class D3VisualizationsComponent implements OnInit {
       top: 20
     }
 
-    var linegraph = new LineGraph(selector, graphWidth, graphHeight, graphMargins);
+    this.lineGraph = new LineGraph(selector, graphWidth, graphHeight, graphMargins);
     var data = new Array();
     var year = 1990;
     for(var i=0;i<100;i++){
@@ -38,8 +38,8 @@ export class D3VisualizationsComponent implements OnInit {
       if(a.year === b.year) return 0;
       else return 1;
     })
-    linegraph.loadData(data);
-    linegraph.draw();
+    this.lineGraph.loadData(data);
+    this.lineGraph.draw();
     
     
   }

@@ -1,0 +1,39 @@
+{
+   "checksum": "631b126bc207afe1dc7342eab3c9097d",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13152029024795692",
+            "id": "6",
+            "meta_info": {
+               "last_visited_desktop": "13152029024797639"
+            },
+            "name": "Documentation · TypeScript",
+            "type": "url",
+            "url": "https://www.typescriptlang.org/docs/home.html"
+         } ],
+         "date_added": "13151892755209286",
+         "date_modified": "13152029024795692",
+         "id": "1",
+         "name": "Bookmarks Bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13151892755209293",
+         "date_modified": "0",
+         "id": "2",
+         "name": "Other Bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13151892755209294",
+         "date_modified": "0",
+         "id": "3",
+         "name": "Mobile Bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}
