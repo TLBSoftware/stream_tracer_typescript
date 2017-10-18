@@ -1,8 +1,8 @@
 import * as d3 from "d3";
 
-interface GraphData{
-    year: number,
-    value: number
+interface DataToGraph{
+	year: Date,
+	value: number
 }
 
 export class LineGraph{
@@ -38,8 +38,8 @@ export class LineGraph{
         this.formatDate = d3.timeFormat("%Y");
         //The line equation that data will be passed into to generate a polyline
         this.lineFunc = d3.line()
-                    .x((d: GraphData)=>{return this.context.xScale(d.year);})
-                    .y((d: GraphData)=>{return this.context.yScale(d.value);});
+                    .x((d)=>{return this.context.xScale(d.year);})
+                    .y((d)=>{return this.context.yScale(d.value);});
 
         //append circle for tooltip
         this.focus.append("circle")

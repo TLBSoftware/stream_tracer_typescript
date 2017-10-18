@@ -9,7 +9,7 @@ import * as d3 from 'd3';
   styleUrls: ['./d3-visualizations.component.css']
 })
 export class D3VisualizationsComponent implements OnInit {
-
+  private parseTime = d3.timeParse("%Y");
   constructor() { }
 
   ngOnInit() {
@@ -28,7 +28,7 @@ export class D3VisualizationsComponent implements OnInit {
     var data = new Array(100);
     for(var i=0;i<100;i++){
       data.push({
-        year: Math.floor(Math.random() * 100),
+        year: this.parseTime(Math.floor(Math.random() * 100).toString()),
         value: Math.floor(Math.random() * 30000)
       })
     }
