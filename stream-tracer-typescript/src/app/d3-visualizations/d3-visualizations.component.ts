@@ -10,6 +10,7 @@ import * as d3 from 'd3';
 })
 export class D3VisualizationsComponent implements OnInit {
   private parseTime = d3.timeParse("%Y");
+  private lineGraph : LineGraph;
   constructor() { }
 
   ngOnInit() {
@@ -24,15 +25,24 @@ export class D3VisualizationsComponent implements OnInit {
       top: 20
     }
 
-    var linegraph = new LineGraph(selector, graphWidth, graphHeight, graphMargins);
-    var data = new Array(100);
+    this.lineGraph = new LineGraph(selector, graphWidth, graphHeight, graphMargins);
+    var data = new Array();
+    var year = 1990;
     for(var i=0;i<100;i++){
+      var date = new Date();
+      date.setFullYear(1990 + Math.floor(Math.random() * 30))
       data.push({
-        year: this.parseTime(Math.floor(Math.random() * 100).toString()),
+        year: this.parseTime(date.getFullYear().toString()),
         value: Math.floor(Math.random() * 30000)
       })
     }
-    linegraph.loadData(data);
+    data = data.sort((a, b)=>{
+      if(a.year < b.year) return -1;
+      if(a.year === b.year) return 0;
+      else return 1;
+    })
+    this.lineGraph.loadData(data);
+    this.lineGraph.draw();
     
     
   }

@@ -1,0 +1,1143 @@
+webpackJsonp(["main"],{
+
+/***/ "../../../../../src/$$_gendir lazy recursive":
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
+
+/***/ }),
+
+/***/ "../../../../../src/app/app.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "#header{\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\napp-map{\n    height: 100%;\n    width: 100%;\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/app.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div id=\"header\">\n  <button (click)=\"toggle()\">toggle</button>\n</div>\n  <app-map *ngIf=\"!toggleBool\" ></app-map>\n\n  <app-d3-visualizations *ngIf=\"toggleBool\" ></app-d3-visualizations>\n\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/app.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var AppComponent = (function () {
+    function AppComponent() {
+        this.title = 'app';
+        this.toggleBool = false;
+    }
+    AppComponent.prototype.toggle = function () {
+        this.toggleBool = !this.toggleBool;
+    };
+    return AppComponent;
+}());
+AppComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-root',
+        template: __webpack_require__("../../../../../src/app/app.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/app.component.css")]
+    })
+], AppComponent);
+
+//# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/app.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__streamer_service__ = __webpack_require__("../../../../../src/app/streamer.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__map_map_component__ = __webpack_require__("../../../../../src/app/map/map.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__("../../../common/@angular/common/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__d3_visualizations_d3_visualizations_component__ = __webpack_require__("../../../../../src/app/d3-visualizations/d3-visualizations.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__map_popup_map_popup_component__ = __webpack_require__("../../../../../src/app/map-popup/map-popup.component.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+var AppModule = (function () {
+    function AppModule() {
+    }
+    return AppModule;
+}());
+AppModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["L" /* NgModule */])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_4__map_map_component__["a" /* MapComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__d3_visualizations_d3_visualizations_component__["a" /* D3VisualizationsComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__map_popup_map_popup_component__["a" /* MapPopupComponent */]
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["b" /* HttpClientModule */]
+        ],
+        providers: [
+            __WEBPACK_IMPORTED_MODULE_0__streamer_service__["a" /* StreamerService */]
+        ],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]]
+    })
+], AppModule);
+
+//# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/d3-visualizations/d3-visualizations.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "#d3-canvas{\n    width: 100vw;\n    height: 100vh;\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/d3-visualizations/d3-visualizations.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div>\n  <svg id=\"d3-canvas\"></svg>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/d3-visualizations/d3-visualizations.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return D3VisualizationsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__model_d3tools__ = __webpack_require__("../../../../../src/app/model/d3tools.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/index.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var D3VisualizationsComponent = (function () {
+    function D3VisualizationsComponent() {
+    }
+    D3VisualizationsComponent.prototype.ngOnInit = function () {
+        var width = 1140;
+        var height = 506;
+        var selector = __WEBPACK_IMPORTED_MODULE_2_d3__["i" /* select */]("#d3-canvas");
+        var graphMargins = { top: 20, right: 85, left: 85, bottom: 20 }, graphWidth = width - graphMargins.left - graphMargins.right - 66, graphHeight = height - graphMargins.top - graphMargins.bottom - 32;
+        var margins = {
+            left: 85,
+            top: 20
+        };
+        this.lineGraph = new __WEBPACK_IMPORTED_MODULE_0__model_d3tools__["a" /* LineGraph */](selector, graphWidth, graphHeight, graphMargins);
+        var data = new Array();
+        var year = 1990;
+        for (var i = 0; i < 100; i++) {
+            data.push({
+                year: year + Math.floor(Math.random() * 30),
+                value: Math.floor(Math.random() * 30000)
+            });
+        }
+        data = data.sort(function (a, b) {
+            if (a.year < b.year)
+                return -1;
+            if (a.year === b.year)
+                return 0;
+            else
+                return 1;
+        });
+        this.lineGraph.loadData(data);
+        this.lineGraph.draw();
+    };
+    return D3VisualizationsComponent;
+}());
+D3VisualizationsComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
+        selector: 'app-d3-visualizations',
+        template: __webpack_require__("../../../../../src/app/d3-visualizations/d3-visualizations.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/d3-visualizations/d3-visualizations.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], D3VisualizationsComponent);
+
+//# sourceMappingURL=d3-visualizations.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/map-popup/map-popup.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/map-popup/map-popup.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  map-popup works\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/map-popup/map-popup.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapPopupComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MapPopupComponent = (function () {
+    function MapPopupComponent() {
+    }
+    MapPopupComponent.prototype.ngOnInit = function () {
+    };
+    return MapPopupComponent;
+}());
+MapPopupComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'app-map-popup',
+        template: __webpack_require__("../../../../../src/app/map-popup/map-popup.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/map-popup/map-popup.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], MapPopupComponent);
+
+//# sourceMappingURL=map-popup.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/map/map.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "#map-container{\n    width: 100vw;\n    height: 100vh;\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/map/map.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "\n<div id=\"map-container\">\n\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/map/map.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__streamer_service__ = __webpack_require__("../../../../../src/app/streamer.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_leaflet__ = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_leaflet__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__("../../../common/@angular/common/http.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+var MapComponent = (function () {
+    function MapComponent(streamer, http) {
+        this.streamer = streamer;
+        this.http = http;
+        this.layers = [];
+    }
+    /*
+    constructor(public navCtrl: NavController,
+    public http: Http) {
+      
+    }
+    */
+    MapComponent.prototype.ngOnInit = function () {
+        this.mapId = "map-container";
+        this.center = [38.219606, -85.475043];
+        this.initMap();
+    };
+    MapComponent.prototype.initMap = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var center, options, osmUrl, osmLayer, streams, nodes;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        console.time("initMap");
+                        center = __WEBPACK_IMPORTED_MODULE_2_leaflet__["latLng"](this.center[0], this.center[1]);
+                        options = {
+                            center: center,
+                            zoom: 13
+                        };
+                        this.map = __WEBPACK_IMPORTED_MODULE_2_leaflet__["map"](this.mapId, options);
+                        osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+                        osmLayer = __WEBPACK_IMPORTED_MODULE_2_leaflet__["tileLayer"](osmUrl).addTo(this.map);
+                        return [4 /*yield*/, this.getJSON("assets/data/parsedstreamfile.json")];
+                    case 1:
+                        streams = _a.sent();
+                        return [4 /*yield*/, this.getJSON("assets/data/parsednodefile.json")];
+                    case 2:
+                        nodes = _a.sent();
+                        this.streamer.LoadData(streams, nodes);
+                        this.mainStreamLayer = __WEBPACK_IMPORTED_MODULE_2_leaflet__["geoJSON"](this.streamer.getStreamFile, {
+                            onEachFeature: function (feature, layer) {
+                                layer.on("click", function (e) {
+                                    _this.DownstreamTrace(e);
+                                });
+                            }
+                        }).addTo(this.map);
+                        //osmLayer.addTo(this.map);s
+                        console.timeEnd("initMap");
+                        this.map.on("click", function (e) {
+                            var marker = __WEBPACK_IMPORTED_MODULE_2_leaflet__["marker"](e.latlng).bindPopup("<app-map-popup></app-map-popup>").addTo(_this.map);
+                            console.log(e);
+                        });
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    MapComponent.prototype.getJSON = function (path) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, new Promise(function (resolve, reject) {
+                        _this.http.get(path).subscribe(function (data) {
+                            resolve(data);
+                        });
+                    })];
+            });
+        });
+    };
+    MapComponent.prototype.DownstreamTrace = function (event) {
+        var streamFeature = event.target.feature;
+        var returnedGeojson = this.streamer.DownstreamTrace(streamFeature);
+        var newLayer = __WEBPACK_IMPORTED_MODULE_2_leaflet__["geoJSON"](returnedGeojson);
+        this.map.removeLayer(this.mainStreamLayer).addLayer(newLayer);
+    };
+    return MapComponent;
+}());
+MapComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
+        selector: 'app-map',
+        template: __webpack_require__("../../../../../src/app/map/map.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/map/map.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__streamer_service__["a" /* StreamerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__streamer_service__["a" /* StreamerService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */]) === "function" && _b || Object])
+], MapComponent);
+
+var _a, _b;
+//# sourceMappingURL=map.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/model/d3tools.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LineGraph; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3__ = __webpack_require__("../../../../d3/index.js");
+
+var LineGraph = (function () {
+    function LineGraph(selecterArg, width, height, margins) {
+        var _this = this;
+        this.colorsForLines = ["red", "blue", "green"];
+        this.selectorArg = selecterArg;
+        this.margins = margins;
+        this.context = this;
+        this.svg = selecterArg.append("g")
+            .attr("transform", "translate(" + this.margins.left + "," + this.margins.top + ")");
+        this.graphHeight = height == null ? this.svg.attr("height") : height;
+        this.graphWidth = width == null ? this.svg.attr("width") : width;
+        this.focus = this.svg.append("g").style("display", "none").attr("class", "focus");
+        this.lineSvg = this.svg
+            .append("g");
+        //Sets the scales of the graph
+        this.xScale = __WEBPACK_IMPORTED_MODULE_0_d3__["h" /* scaleTime */]().range([0, this.graphWidth]);
+        this.yScale = __WEBPACK_IMPORTED_MODULE_0_d3__["g" /* scaleLinear */]().range([this.graphHeight, 0]);
+        this.formatDate = __WEBPACK_IMPORTED_MODULE_0_d3__["j" /* timeFormat */]("%Y");
+        //The line equation that data will be passed into to generate a polyline
+        var lineYearFunc = function (d) { return _this.xScale(d.year); };
+        var lineValueFunc = function (d) { return _this.yScale(d.value); };
+        this.lineFunc = __WEBPACK_IMPORTED_MODULE_0_d3__["d" /* line */]()
+            .x(lineYearFunc)
+            .y(lineValueFunc);
+        //append circle for tooltip
+        this.focus.append("circle")
+            .attr("class", "y")
+            .style("fill", "none")
+            .style("stroke", "blue")
+            .attr("r", 4);
+        this.focus.append("text")
+            .attr("class", "y1")
+            .style("stroke", "white")
+            .style("stroke-width", "3.5px")
+            .style("opacity", 0.8)
+            .attr("dx", 8)
+            .attr("dy", "-.3em");
+        this.focus.append("text")
+            .attr("class", "y2")
+            .attr("dx", 8)
+            .attr("dy", "-.3em");
+        this.focus.append("text")
+            .attr("class", "y3")
+            .style("stroke", "white")
+            .style("stroke-width", "3.5px")
+            .style("opacity", 0.8)
+            .attr("dx", 8)
+            .attr("dy", "1em");
+        this.focus.append("text")
+            .attr("class", "y4")
+            .attr("dx", 8)
+            .attr("dy", "1em");
+    }
+    LineGraph.prototype.loadData = function (data) {
+        this.data = data;
+        console.log(data);
+        var rangeOfTime = [], rangeOfValues = [];
+        /*
+        for(var i=0;i<this.data.length;i++){
+            rangeOfTime.push(d3.min(data[i], returnYear));
+            rangeOfTime.push(d3.max(data[i], returnYear));
+            rangeOfValues.push(d3.min(data[i], returnValue));
+            rangeOfValues.push(d3.max(data[i], returnValue));
+        }*/
+        var returnYear = function (d) { return d.year; };
+        var returnValue = function (d) { return d.value; };
+        rangeOfTime.push(__WEBPACK_IMPORTED_MODULE_0_d3__["f" /* min */](data, returnYear));
+        rangeOfTime.push(__WEBPACK_IMPORTED_MODULE_0_d3__["e" /* max */](data, returnYear));
+        rangeOfValues.push(__WEBPACK_IMPORTED_MODULE_0_d3__["f" /* min */](data, returnValue));
+        rangeOfValues.push(__WEBPACK_IMPORTED_MODULE_0_d3__["e" /* max */](data, returnValue));
+        this.xScale.domain(__WEBPACK_IMPORTED_MODULE_0_d3__["c" /* extent */](rangeOfTime, function (d) { return d; }));
+        this.yScale.domain(__WEBPACK_IMPORTED_MODULE_0_d3__["c" /* extent */](rangeOfValues, function (d) { return d; }));
+    };
+    ;
+    LineGraph.prototype.draw = function () {
+        /*
+        if(this.data.length <= 3){
+            for(var i=0;i<this.data.length;i++){
+                var lineClass = "line" + i;
+                this.lineSvg
+                    .append("path")
+                    .data([this.data[i]])
+                    .attr("class", lineClass)
+                    .attr("d", this.lineFunc)
+                    .attr("stroke", this.colorsForLines[i])
+            }
+        }else{
+            for(var i=0;i<this.data.length;i++){
+                var lineClass = "line" + i;
+                this.lineSvg
+                    .append("path")
+                    .data([this.data[i]])
+                    .attr("class", lineClass)
+                    .attr("d", this.lineFunc)
+                    .attr("stroke", "red")
+                    
+            }
+        }*/
+        var lineClass = "data-set-1";
+        this.lineSvg
+            .append("path")
+            .data([this.data]) //datum, not data
+            .attr("class", lineClass)
+            .attr("d", this.lineFunc)
+            .attr("fill", "none")
+            .attr("stroke", "red");
+        this.lineSvg
+            .append("g")
+            .attr("transform", "translate(0," + this.graphHeight + ")")
+            .call(__WEBPACK_IMPORTED_MODULE_0_d3__["a" /* axisBottom */](this.xScale));
+        this.lineSvg
+            .append("g")
+            .call(__WEBPACK_IMPORTED_MODULE_0_d3__["b" /* axisLeft */](this.yScale));
+        /*
+    if(this.data.length <= 3){
+    this.svg.append("rect")
+        .attr("width", this.graphWidth)
+        .attr("height", this.graphHeight)
+        .attr("class", "mouseover-rectangle")
+        .style("stroke", "none")
+        .style("fill", "none")
+        .style("pointer-events", "all")
+        .on("mouseover", ()=> { this.focus.style("display", null); })
+        .on("mouseout", ()=> { this.focus.style("display", "none"); })
+        .on("mousemove", this.mousemove);
+    }*/
+        /*
+        this.svg.append("rect")
+                .attr("width", this.graphWidth)
+                .attr("height", this.graphHeight)
+                .attr("class", "mouseover-rectangle")
+                .style("stroke", "none")
+                .style("fill", "none")
+                .style("pointer-events", "all")
+                .on("mouseover", ()=> { this.focus.style("display", null); })
+                .on("mouseout", ()=> { this.focus.style("display", "none"); })
+                .on("mousemove", ()=>mousemove(this));
+
+                
+                function mousemove(context){
+                    let returnYear = (d)=>{ return d.year; };
+                    
+                    var bisectDate = d3.bisector(returnYear).left;
+                    var toolData = context.data;
+                    var rectangle: d3.ContainerElement = this;
+                    var x0 = context.xScale.invert(d3.mouse(this)[0]),
+                      i = bisectDate(toolData, x0, 1),
+                      d0 = toolData[i - 1],
+                      d1 = toolData[i],
+                      d =x0 - d0.year > d1.year - x0 ? d1 : d0;
+                      
+                    let xScale = context.xScale,
+                        yScale = context.yScale,
+                        focus = context.focus,
+                        formatDate = context.formateDate;
+            
+                    focus.select("circle.y")
+                            .attr("transform",
+                            "translate(" + (xScale(d.year)) + "," +
+                                           (yScale(d.value)) + ")");
+                    focus.select("text.y1")
+                            .attr("transform",
+                            "translate(" + (xScale(d.year)) + "," +
+                                           (yScale(d.value)) + ")")
+                            .text("$"+d.value);
+            
+                    focus.select("text.y2")
+                            .attr("transform",
+                            "translate(" + (xScale(d.year)) + "," +
+                                           (yScale(d.value)) + ")")
+                            .text("$"+d.value);
+                    focus.select("text.y3")
+                              .attr("transform",
+                            "translate(" + xScale(d.year) + "," +
+                                       yScale(d.value) + ")")
+                              .text(formatDate(d.year));
+            
+                    focus.select("text.y4")
+                              .attr("transform",
+                                "translate(" + xScale(d.year) + "," +
+                                               yScale(d.value) + ")")
+                              .text(formatDate(d.year));
+                }
+        
+        */
+    };
+    return LineGraph;
+}());
+
+//# sourceMappingURL=d3tools.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/streamer.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StreamerService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_leaflet__ = __webpack_require__("../../../../leaflet/dist/leaflet-src.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_leaflet__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var StreamerService = (function () {
+    function StreamerService() {
+        this.Context = this;
+    }
+    Object.defineProperty(StreamerService.prototype, "getStreamFile", {
+        //Getters and Setters
+        /*Getters and setters cannot be the same name as the property they update
+        *For example:
+        * set StreamFile(input){this.StreamFile = input}
+        * This will cause an infinite loop by invoking the setter again
+        */
+        get: function () {
+            return this.StreamFile;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(StreamerService.prototype, "setStreamFile", {
+        set: function (input) {
+            this.StreamFile = input;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(StreamerService.prototype, "getNodeFile", {
+        get: function () {
+            return this.NodeFile;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(StreamerService.prototype, "setNodeFile", {
+        set: function (input) {
+            this.NodeFile = input;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    //Methods
+    StreamerService.prototype.AddData = function (streams, nodes) {
+        //add data and then parse
+        if (streams !== null && nodes !== null &&
+            streams !== undefined && nodes !== undefined) {
+            this.StreamFile = streams;
+            this.NodeFile = nodes;
+            this.ParseNodesToStreams();
+        }
+        else if (streams !== null && streams !== undefined) {
+            if (streams.features[0].geometry.type === "MultiLineString") {
+                this.StreamFile = this.ConvertStreams(streams);
+            }
+            else {
+                this.StreamFile = streams;
+            }
+            this.NodeFile = this.DirtyNodeCreator();
+            this.ParseNodesToStreams();
+        }
+        else {
+            console.log("AddData Method: neither streams or nodes can be null or undefined");
+        }
+    };
+    StreamerService.prototype.LoadData = function (streams, nodes) {
+        if (streams !== null && nodes !== null &&
+            streams !== undefined && nodes !== undefined) {
+            this.StreamFile = streams;
+            this.NodeFile = nodes;
+        }
+        else {
+            console.log("LoadData Method: neither streams or nodes can be null");
+        }
+    };
+    /*
+    There is a dirty and an optimized way to do this.
+    Dirty Way: Use the beginnings and ends of every feature to create a non duplicate
+    NodeFile and then use pre existing parser to create relations
+    GeoJSON files retrieved using qgis from the nhd will have features with a type of "Multilinestring"
+    as oppossed to linestring, which makes the streams nested one layer deeper. Unsure how to fix this right now
+    other than the ConvertStreams method quick fix, will update later to make class more robust.
+    Optimized way: While creating the Nodes for a stream, concurrently add the nodes to streams and vice versa
+    */
+    StreamerService.prototype.DirtyNodeCreator = function () {
+        var nodegeojson = { "type": "FeatureCollection", "features": [] };
+        var temparray = [];
+        for (var i = 0; i < this.StreamFile.features.length; i++) {
+            var nodearray = new Array(2);
+            var streamcoordinates = this.StreamFile.features[i].geometry.coordinates;
+            nodearray[0] = [streamcoordinates[0][0], streamcoordinates[0][1]];
+            nodearray[1] = [streamcoordinates[streamcoordinates.length - 1][0], streamcoordinates[streamcoordinates.length - 1][1]];
+            for (var y = 0; y < nodearray.length; y++) {
+                //does it contain the feature already
+                var counter = temparray.length;
+                for (var x = 0; x < temparray.length; x++) {
+                    if (temparray[x][0] === nodearray[y][0] &&
+                        temparray[x][1] === nodearray[y][1]) {
+                        break;
+                    }
+                    else {
+                        counter--;
+                    }
+                }
+                if (counter === 0) {
+                    temparray.push([nodearray[y][0], nodearray[y][1]]);
+                }
+            }
+        }
+        var featureArray = new Array(temparray.length);
+        for (var i = 0; i < temparray.length; i++) {
+            featureArray[i] = this.CreateBlankNodeFeature(temparray[i]);
+        }
+        nodegeojson.features = featureArray;
+        return nodegeojson;
+    };
+    /*
+        A VERY CRUDE AND UNROBUST WAY TO HANDLE THIS
+        Quickly implemented to allow me to use the flowline data retrieved from the nhd via qgis
+        Data format had features containing single lined multilines, shouldve been just lines but I
+        am unexperienced with qgis.
+    */
+    StreamerService.prototype.ConvertStreams = function (streams) {
+        for (var i = 0; i < streams.features.length; i++) {
+            streams.features[i].geometry.coordinates = (streams.features[i].geometry.coordinates[0]);
+            streams.features[i].geometry.type = "LineString";
+        }
+        return streams;
+    };
+    //Used to create a node feature to place inside of the generated nodefile
+    StreamerService.prototype.CreateBlankNodeFeature = function (coordinates) {
+        /*{"type":"Feature","properties":
+            {"Enabled":1},"geometry":
+                {"type":"Point","coordinates":[-86.27280487599995,37.300131959000055]}}
+        */
+        var returnjson = {
+            "type": "Feature",
+            "properties": {
+                "Enabled": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": null
+            }
+        };
+        returnjson.geometry.coordinates = coordinates;
+        return returnjson;
+    };
+    StreamerService.prototype.ParseNodesToStreams = function () {
+        if (this.StreamFile === null || this.NodeFile === null ||
+            this.StreamFile === undefined || this.NodeFile === undefined) {
+            console.log("Parsing requires StreamFile and NodeFile to be set");
+            return; //returning since one or more is null
+        }
+        var indexArray = this.CreateNodeIndexArray(this.NodeFile);
+        for (var i = 0; i < this.StreamFile.features.length; i++) {
+            //create new property to store the indexes
+            this.StreamFile.features[i].properties.ToNodeIndexes = [];
+            //retrieve the indexes of the nodes
+            var nodeCollection = this.FindStreamsNodes(this.StreamFile.features[i], indexArray);
+            this.StreamFile.features[i].properties.ToNodeIndexes = new Array(nodeCollection.length - 1);
+            //for every node, push it to the new property created above
+            if (nodeCollection !== undefined) {
+                for (var x = 0; x < nodeCollection.length; x++) {
+                    //push the nodes index to the StreamFile properties
+                    if (x === 0) {
+                        this.StreamFile.features[i].properties.FromNodeIndex = nodeCollection[x];
+                    }
+                    else {
+                        this.StreamFile.features[i].properties.ToNodeIndexes[x - 1] = nodeCollection[x];
+                    }
+                    //push the streams index to each nodes properties
+                    this.AssignStreamToNode(nodeCollection[x], i);
+                }
+            }
+        }
+    };
+    StreamerService.prototype.CreateNodeIndexArray = function (nodes) {
+        var newarray = new Array(nodes.features.length);
+        for (var i = 0; i < newarray.length; i++) {
+            newarray[i] = nodes.features[i].geometry.coordinates;
+        }
+        return newarray;
+    };
+    StreamerService.prototype.AssignStreamToNode = function (nodeIndex, streamIndex) {
+        var existingStreamIndexes = this.NodeFile.features[nodeIndex].properties.streamIndexes;
+        //if property exists then check if the node contains the stream already
+        if (existingStreamIndexes !== undefined) {
+            //if the stream is already contained then return
+            if (existingStreamIndexes.indexOf(streamIndex) !== -1) {
+                return;
+            }
+            this.NodeFile.features[nodeIndex].properties.streamIndexes.push(streamIndex);
+        }
+        else {
+            this.NodeFile.features[nodeIndex].properties.streamIndexes = [streamIndex];
+        }
+    };
+    StreamerService.prototype.FindStreamsNodes = function (stream, hydroIndex) {
+        //FIRST ARRAY INDEX HAS TO BE THE FROMNODE
+        var streamsNodesIndexes = [];
+        var streamNodesandCoordIndexes = [];
+        for (var x = 0; x < hydroIndex.length; x++) {
+            for (var i = 0; i < stream.geometry.coordinates.length; i++) {
+                if (hydroIndex[x][0] === stream.geometry.coordinates[i][0]
+                    &&
+                        hydroIndex[x][1] === stream.geometry.coordinates[i][1]) {
+                    streamNodesandCoordIndexes.push({ nodeIndex: x, coordIndex: i });
+                    break;
+                }
+            }
+        }
+        if (stream.properties.FlowDir === 1) {
+            var min = streamNodesandCoordIndexes[0];
+            for (var i = 1; i < streamNodesandCoordIndexes.length; i++) {
+                if (streamNodesandCoordIndexes[i].coordIndex < min.coordIndex) {
+                    min = streamNodesandCoordIndexes[i];
+                }
+            }
+            streamsNodesIndexes.push(min.nodeIndex);
+            for (var i = 0; i < streamNodesandCoordIndexes.length; i++) {
+                if (streamNodesandCoordIndexes[i] !== min) {
+                    streamsNodesIndexes.push(streamNodesandCoordIndexes[i].nodeIndex);
+                }
+            }
+        }
+        else {
+            var max = streamNodesandCoordIndexes[0];
+            for (var i = 1; i < streamNodesandCoordIndexes.length; i++) {
+                if (streamNodesandCoordIndexes[i].coordIndex > max.coordIndex) {
+                    max = streamNodesandCoordIndexes[i];
+                }
+            }
+            streamsNodesIndexes.push(max.nodeIndex);
+            for (var i = 0; i < streamNodesandCoordIndexes.length; i++) {
+                if (streamNodesandCoordIndexes[i] !== max) {
+                    streamsNodesIndexes.push(streamNodesandCoordIndexes[i].nodeIndex);
+                }
+            }
+        }
+        return streamsNodesIndexes;
+    };
+    StreamerService.prototype.DownstreamTrace = function (streamFeature) {
+        console.log("DownstreamTrace exists");
+        var DownstreamTraceCollection = [];
+        DownstreamTraceCollection.push(streamFeature);
+        //retrieve remaining streams for trace
+        var loopFlag = true;
+        if (streamFeature.properties.ToNodeIndexes === 0) {
+            loopFlag = false;
+        }
+        //next stream is an array to allow segments to split
+        var nextStream = [streamFeature];
+        while (loopFlag) {
+            nextStream = this.FindNextDownStreamArray(nextStream);
+            var counterLimit = nextStream.length;
+            //check if all streams have only 1 node, if they all do then break the loop
+            for (var i = 0; i < nextStream.length; i++) {
+                //added to prevent massive geojson objects
+                if (DownstreamTraceCollection.indexOf(nextStream[i]) === -1) {
+                    DownstreamTraceCollection.push(nextStream[i]);
+                }
+                if (nextStream[i].properties.ToNodeIndexes === 0) {
+                    counterLimit--;
+                }
+            }
+            //may be causing crash due to infinite loop
+            if (counterLimit === 0) {
+                loopFlag = false;
+                break;
+            }
+            else if (nextStream.length === 1 && this.RetrieveDownStreamFromNodes(nextStream[0]).length === 0) {
+                loopFlag = false;
+                break;
+            }
+        }
+        //create geoJson object
+        var DownstreamGeoJson = { type: "FeatureCollection", features: DownstreamTraceCollection };
+        //Draw Layer
+        return DownstreamGeoJson;
+    };
+    StreamerService.prototype.UpstreamTrace = function (streamFeature) {
+        var UpstreamCollection = [];
+        UpstreamCollection.push(streamFeature);
+        var loopFlag = true;
+        var nextStream = [streamFeature];
+        while (loopFlag) {
+            nextStream = this.FindNextUpstreamArray(nextStream);
+            if (nextStream.length === 0) {
+                loopFlag = false;
+                break;
+            }
+            for (var i = 0; i < nextStream.length; i++) {
+                if (UpstreamCollection.indexOf(nextStream[i]) === -1) {
+                    UpstreamCollection.push(nextStream[i]);
+                }
+            }
+        }
+        var UpstreamGeoJson = { type: "FeatureCollection", features: UpstreamCollection };
+        return UpstreamGeoJson;
+    };
+    StreamerService.prototype.FindNextDownStreamArray = function (streamArray) {
+        var returnArray = [];
+        for (var i = 0; i < streamArray.length; i++) {
+            if (streamArray[i].properties.ToNodeIndexes.length === 0) {
+                break;
+            }
+            else {
+                var streams = this.RetrieveDownStreamFromNodes(streamArray[i]);
+                for (var x = 0; x < streams.length; x++) {
+                    if (returnArray.indexOf(streams[x]) === -1) {
+                        returnArray.push(streams[x]);
+                    }
+                }
+            }
+        }
+        return returnArray;
+    };
+    StreamerService.prototype.FindNextUpstreamArray = function (streamArray) {
+        var returnArray = [];
+        for (var i = 0; i < streamArray.length; i++) {
+            var streams = this.RetrieveUpstreamFromNodes(streamArray[i]);
+            for (var x = 0; x < streams.length; x++) {
+                if (returnArray.indexOf(streams[x]) === -1) {
+                    returnArray.push(streams[x]);
+                }
+            }
+        }
+        return returnArray;
+    };
+    StreamerService.prototype.RetrieveDownStreamFromNodes = function (stream) {
+        var returnStreams = [];
+        //for every node
+        for (var i = 0; i < stream.properties.ToNodeIndexes.length; i++) {
+            var ToNodeIndex = stream.properties.ToNodeIndexes[i];
+            var nodeStreams = this.NodeFile.features[ToNodeIndex].properties.streamIndexes;
+            //find the streams that do not have this index as a "FromNodeIndex"
+            for (var x = 0; x < nodeStreams.length; x++) {
+                var streamFromNodeIndex = this.StreamFile.features[nodeStreams[x]];
+                if (streamFromNodeIndex.properties.FromNodeIndex === ToNodeIndex
+                    && streamFromNodeIndex !== stream) {
+                    returnStreams.push(streamFromNodeIndex);
+                    //drop markers on the new streams nodes
+                    //this.markStreamsNodes(streamFromNodeIndex);
+                }
+            }
+        }
+        return returnStreams;
+    };
+    StreamerService.prototype.RetrieveUpstreamFromNodes = function (stream) {
+        var returnStreams = [];
+        var FromNode = stream.properties.FromNodeIndex;
+        var Streams = this.NodeFile.features[FromNode].properties.streamIndexes;
+        for (var i = 0; i < Streams.length; i++) {
+            //turn index into stream
+            var stream2 = this.StreamFile.features[Streams[i]];
+            if (stream2 !== stream) {
+                //get ToNodeIndexes from stream2
+                var StreamsToNodes = stream2.properties.ToNodeIndexes;
+                for (var x = 0; x < StreamsToNodes.length; x++) {
+                    //since tracing upstream we want the stream whos ToNode equals the input streams FromNode
+                    if (StreamsToNodes[x] === FromNode) {
+                        returnStreams.push(stream2);
+                        break;
+                    }
+                }
+            }
+        }
+        return returnStreams;
+    };
+    /**
+     * Requires Leaflet as well as depends on map object being named map
+     */
+    StreamerService.prototype.MarkStreamsNodes = function (stream, map) {
+        var FromNode = this.NodeFile.features[stream.propertoes.FromNodeIndex].geometry.coordinates;
+        __WEBPACK_IMPORTED_MODULE_1_leaflet__["marker"]([FromNode[1], FromNode[0]]).bindPopup("FromNode, index " + stream.properties.FromNodeIndex);
+        for (var i = 0; i < stream.properties.ToNodeIndexes.length; i++) {
+            var ToNode = this.NodeFile.features[stream.properties.ToNodeIndexes[i]].geometry.coordinates;
+            __WEBPACK_IMPORTED_MODULE_1_leaflet__["marker"]([ToNode[1], ToNode[0]]).bindPopup("ToNode, index " + stream.properties.ToNodeIndexes[i]).addTo(map);
+        }
+    };
+    return StreamerService;
+}());
+StreamerService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [])
+], StreamerService);
+
+//# sourceMappingURL=streamer.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/environments/environment.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+// The file contents for the current environment will overwrite these during build.
+// The build system defaults to the dev environment which uses `environment.ts`, but if you do
+// `ng build --env=prod` then `environment.prod.ts` will be used instead.
+// The list of which env maps to which file can be found in `.angular-cli.json`.
+// The file contents for the current environment will overwrite these during build.
+var environment = {
+    production: false
+};
+//# sourceMappingURL=environment.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/main.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+
+
+
+
+if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_19" /* enableProdMode */])();
+}
+Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
+    .catch(function (err) { return console.log(err); });
+//# sourceMappingURL=main.js.map
+
+/***/ }),
+
+/***/ "../../../../webpack/hot ^\\.\\/log$":
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./log": "../../../../webpack/hot/log.js"
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "../../../../webpack/hot ^\\.\\/log$";
+
+/***/ }),
+
+/***/ 0:
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__("../../../../webpack-dev-server/client/index.js?http://localhost:4200");
+module.exports = __webpack_require__("../../../../../src/main.ts");
+
+
+/***/ })
+
+},[0]);
+//# sourceMappingURL=main.bundle.js.map

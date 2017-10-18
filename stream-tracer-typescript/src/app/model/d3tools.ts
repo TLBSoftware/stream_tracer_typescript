@@ -23,7 +23,7 @@ export class LineGraph{
     constructor(selecterArg, width, height, margins){
         this.selectorArg = selecterArg;
         this.margins = margins;
-        this.context = this;
+		this.context = this;
         this.svg = selecterArg.append("g")
                     .attr("transform",
                     "translate("+this.margins.left+","+this.margins.top+")");
@@ -36,10 +36,12 @@ export class LineGraph{
         this.xScale = d3.scaleTime().range([0, this.graphWidth]);
         this.yScale = d3.scaleLinear().range([this.graphHeight, 0]);
         this.formatDate = d3.timeFormat("%Y");
-        //The line equation that data will be passed into to generate a polyline
+		//The line equation that data will be passed into to generate a polyline
+		let lineYearFunc = (d)=>{return this.xScale(d.year)};
+		let lineValueFunc = (d)=>{return this.yScale(d.value)};
         this.lineFunc = d3.line()
-                    .x((d)=>{return this.context.xScale(d.year);})
-                    .y((d)=>{return this.context.yScale(d.value);});
+                    .x(lineYearFunc)
+                    .y(lineValueFunc);
 
         //append circle for tooltip
         this.focus.append("circle")
@@ -76,18 +78,27 @@ export class LineGraph{
 		this.data = data;
 		console.log(data);
 		var rangeOfTime = [], rangeOfValues = [];
+		/*
 		for(var i=0;i<this.data.length;i++){
-			rangeOfTime.push(d3.min(data[i], (d)=>{return d.year;}));
-            rangeOfTime.push(d3.max(data[i], (d)=>{return d.year;}));
-			rangeOfValues.push(d3.min(data[i], (d)=>{return d.value;}));
-			rangeOfValues.push(d3.max(data[i], (d)=>{return d.value;}));
-		}
-		this.xScale.domain(d3.extent(rangeOfTime, (d)=>{return d;}));
-		this.yScale.domain(d3.extent(rangeOfValues, (d)=>{return d;}));
+			rangeOfTime.push(d3.min(data[i], returnYear));
+            rangeOfTime.push(d3.max(data[i], returnYear));
+			rangeOfValues.push(d3.min(data[i], returnValue));
+			rangeOfValues.push(d3.max(data[i], returnValue));
+		}*/
+		
+		let returnYear = (d) =>{return d.year};
+		let returnValue = (d)=>{return d.value};
+		rangeOfTime.push(d3.min(this.data, returnYear));
+		rangeOfTime.push(d3.max(this.data, returnYear));
+		rangeOfValues.push(d3.min(this.data, returnValue));
+		rangeOfValues.push(d3.max(this.data, returnValue));
+		
+		this.xScale.domain(rangeOfTime.sort());
+		this.yScale.domain(rangeOfValues.sort());
     };	
     
     draw(){
-		
+		/*
 		if(this.data.length <= 3){
 			for(var i=0;i<this.data.length;i++){
 				var lineClass = "line" + i;
@@ -106,10 +117,19 @@ export class LineGraph{
 					.data([this.data[i]])
 					.attr("class", lineClass)
 					.attr("d", this.lineFunc)
-					.attr("stroke", "black")
+					.attr("stroke", "red")
 					
 			}
-		}
+		}*/
+
+		var lineClass = "data-set-1";
+		this.lineSvg
+			.append("path")
+			.data([this.data]) //datum, not data
+			.attr("class", lineClass)
+			.attr("d", this.lineFunc)
+			.attr("fill", "none")
+			.attr("stroke", "red")
 		this.lineSvg
 			.append("g")
 			.attr("transform", "translate(0," + this.graphHeight + ")")
@@ -118,6 +138,7 @@ export class LineGraph{
 			.append("g")
 			.call(d3.axisLeft(this.yScale));
 
+			/*
 		if(this.data.length <= 3){
 		this.svg.append("rect")
 	        .attr("width", this.graphWidth)
@@ -129,46 +150,71 @@ export class LineGraph{
 	        .on("mouseover", ()=> { this.focus.style("display", null); })
 	        .on("mouseout", ()=> { this.focus.style("display", "none"); })
 	        .on("mousemove", this.mousemove);
-    	}
+		}*/
+		/*
+		this.svg.append("rect")
+				.attr("width", this.graphWidth)
+				.attr("height", this.graphHeight)
+				.attr("class", "mouseover-rectangle")
+				.style("stroke", "none")
+				.style("fill", "none")
+				.style("pointer-events", "all")
+				.on("mouseover", ()=> { this.focus.style("display", null); })
+				.on("mouseout", ()=> { this.focus.style("display", "none"); })
+				.on("mousemove", ()=>mousemove(this));
+
+				
+				function mousemove(context){
+					let returnYear = (d)=>{ return d.year; };
+					
+					var bisectDate = d3.bisector(returnYear).left;
+					var toolData = context.data;
+					var rectangle: d3.ContainerElement = this;
+					var x0 = context.xScale.invert(d3.mouse(this)[0]),
+					  i = bisectDate(toolData, x0, 1),
+					  d0 = toolData[i - 1],
+					  d1 = toolData[i],
+					  d =x0 - d0.year > d1.year - x0 ? d1 : d0;
+					  
+					let xScale = context.xScale,
+						yScale = context.yScale,
+						focus = context.focus,
+						formatDate = context.formateDate;
+			
+					focus.select("circle.y")
+							.attr("transform",  
+							"translate(" + (xScale(d.year)) + "," +  
+										   (yScale(d.value)) + ")");
+					focus.select("text.y1")
+							.attr("transform",  
+							"translate(" + (xScale(d.year)) + "," +  
+										   (yScale(d.value)) + ")")
+							.text("$"+d.value);
+			
+					focus.select("text.y2")
+							.attr("transform",  
+							"translate(" + (xScale(d.year)) + "," +  
+										   (yScale(d.value)) + ")")
+							.text("$"+d.value);
+					focus.select("text.y3")
+							  .attr("transform",
+							"translate(" + xScale(d.year) + "," +
+									   yScale(d.value) + ")")
+							  .text(formatDate(d.year));
+			
+					focus.select("text.y4")
+							  .attr("transform",
+								"translate(" + xScale(d.year) + "," +
+											   yScale(d.value) + ")")
+							  .text(formatDate(d.year));
+				}
+		
+		*/
     }
     	
 //event to track mouse position and move circle on line
     
-    mousemove(){
-        var bisectDate = d3.bisector((d)=>{ return d.year; }).left;
-    	var toolData = this.data[0]
-		var x0 = this.xScale.invert(d3.mouse(this.svg)[0]),
-	      i = bisectDate(toolData, x0, 1),
-	      d0 = toolData[i - 1],
-	      d1 = toolData[i],
-	      d =x0 - d0.year > d1.year - x0 ? d1 : d0;
-
-	    this.focus.select("circle.y")
-	    		.attr("transform",  
-	            "translate(" + (this.xScale(d.year)) + "," +  
-	                           (this.yScale(d.value)) + ")");
-	    this.focus.select("text.y1")
-	    		.attr("transform",  
-	            "translate(" + (this.xScale(d.year)) + "," +  
-	                           (this.yScale(d.value)) + ")")
-	    		.text("$"+d.value);
-
-	    this.focus.select("text.y2")
-	    		.attr("transform",  
-	            "translate(" + (this.xScale(d.year)) + "," +  
-	                           (this.yScale(d.value)) + ")")
-	    		.text("$"+d.value);
-	    this.focus.select("text.y3")
-      			.attr("transform",
-            	"translate(" + this.xScale(d.year) + "," +
-                           this.yScale(d.value) + ")")
-      			.text(this.formatDate(d.year));
-
-		this.focus.select("text.y4")
-		      	.attr("transform",
-		            "translate(" + this.xScale(d.year) + "," +
-		                           this.yScale(d.value) + ")")
-		      	.text(this.formatDate(d.year));
-	}
+    
+	
 
 }
