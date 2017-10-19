@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  toggleBool = false;
+  toggleBool = true;
 
   toggle(){
     this.toggleBool = !this.toggleBool;

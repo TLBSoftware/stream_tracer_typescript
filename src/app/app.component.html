@@ -1,8 +1,22 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div id="header">
-  <button (click)="toggle()">toggle</button>
-</div>
-  <app-map *ngIf="!toggleBool" ></app-map>
+<mat-toolbar color="primary">
+  TLBSoftware 
+</mat-toolbar>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav opened="false" #sidenav mode="over">
+    <!-- sidenav content-->
+    <button class="btn">Hello from side nav</button>
+  </mat-sidenav>
+  
 
-  <app-d3-visualizations *ngIf="toggleBool" ></app-d3-visualizations>
+    <!-- primary content -->
+    <div id="header">
+      <button class="btn btn-primary" (click)="sidenav.open()">
+        toggle
+      </button>
+    </div>
+    <app-map *ngIf="!toggleBool" ></app-map>
+    
+    <app-d3-visualizations *ngIf="toggleBool" ></app-d3-visualizations>
+  
+</mat-sidenav-container>
 

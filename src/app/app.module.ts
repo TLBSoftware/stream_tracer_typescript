@@ -7,7 +7,9 @@ import { MapComponent } from './map/map.component';
 import { HttpClientModule } from "@angular/common/http";
 import { D3VisualizationsComponent } from './d3-visualizations/d3-visualizations.component';
 import { MapPopupComponent } from './map-popup/map-popup.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+//you need to know import all material components that you want to use
+import { MatSidenavModule ,MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule} from '@angular/material'
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +19,14 @@ import { MapPopupComponent } from './map-popup/map-popup.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule, 
+    MatCardModule,
+    MatMenuModule,
+    MatToolbarModule, 
+    MatIconModule,
+    MatSidenavModule
   ],
   providers: [
     StreamerService

@@ -15,7 +15,8 @@ export class MapComponent implements OnInit {
   private map: L.Map;
   private mainStreamLayer;
   private layers: any[] = [];
-  constructor(private streamer: StreamerService, private http: HttpClient) { }
+  constructor(private streamer: StreamerService,
+     private http: HttpClient) { }
   
   /*
   constructor(public navCtrl: NavController,
@@ -24,7 +25,7 @@ export class MapComponent implements OnInit {
   }
   */
   ngOnInit() {
-    this.mapId = "map-container";
+    this.mapId = "my-map-container";
     this.center = [38.219606, -85.475043];
     this.initMap();
   }
