@@ -1,3 +1,5 @@
-2017/10/10-22:02:38.456 34051 Reusing MANIFEST /Users/taylorbryant/Documents/Projects/at_home_projects/stream_tracer_typescript/.vscode/chrome/Default/File System/Origins/MANIFEST-000001
-2017/10/10-22:02:38.456 34051 Recovering log #3
-2017/10/10-22:02:38.456 34051 Reusing old log /Users/taylorbryant/Documents/Projects/at_home_projects/stream_tracer_typescript/.vscode/chrome/Default/File System/Origins/000003.log 
+2017/10/18-22:03:20.850 6228 Log #3: 3 ops saved to Table #4 OK
+2017/10/18-22:03:20.851 6228 Archiving c:\Users\tnayr\Documents\ProgrammingProjects\stream_tracer_typescript\.vscode\chrome\Default\File System\Origins/000003.log: OK
+2017/10/18-22:03:20.851 6228 Table #4: 3 entries OK
+2017/10/18-22:03:20.856 6228 Archiving c:\Users\tnayr\Documents\ProgrammingProjects\stream_tracer_typescript\.vscode\chrome\Default\File System\Origins/MANIFEST-000001: OK
+2017/10/18-22:03:20.862 6228 **** Repaired leveldb c:\Users\tnayr\Documents\ProgrammingProjects\stream_tracer_typescript\.vscode\chrome\Default\File System\Origins; recovered 1 files; 184 bytes. Some data may have been lost. ****

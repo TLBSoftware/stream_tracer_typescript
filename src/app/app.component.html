@@ -1,22 +1,35 @@
 <mat-toolbar color="primary">
-  TLBSoftware 
+  <span class="pull-left" >
+    <button class="btn"  (click)="sidenav.open()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </span>
+  <span>TLBSoftware</span> 
 </mat-toolbar>
-<mat-sidenav-container class="example-container">
-  <mat-sidenav opened="false" #sidenav mode="over">
-    <!-- sidenav content-->
-    <button class="btn">Hello from side nav</button>
-  </mat-sidenav>
-  
 
-    <!-- primary content -->
-    <div id="header">
-      <button class="btn btn-primary" (click)="sidenav.open()">
-        toggle
-      </button>
+<mat-sidenav-container>
+  <!-- primary content -->
+  <mat-sidenav opened="false" #sidenav mode="over">
+    <div class="grid">
+      <div class="row">
+        <button class="btn sidenav-item" mat-button (click)="toggleMap()">Leaflet Map</button>
+      </div>
+      <div class="row">
+        <button class="btn sidenav-item" mat-button (click)="toggleGraph()">D3 LineGraph</button>
+      </div>
     </div>
-    <app-map *ngIf="!toggleBool" ></app-map>
-    
-    <app-d3-visualizations *ngIf="toggleBool" ></app-d3-visualizations>
-  
+  </mat-sidenav>
+
+  <div style="width: 100%; height: 100%;">
+    <div id="header">
+    </div>
+    <mat-list *ngIf="mainView">
+
+    </mat-list>
+    <app-map *ngIf="page('map').toggled">
+      <div id="map-container"></div>
+    </app-map>
+    <app-d3-visualizations *ngIf="page('graph').toggled" ></app-d3-visualizations>
+  </div>
 </mat-sidenav-container>
 

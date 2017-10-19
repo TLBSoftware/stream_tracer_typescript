@@ -24,8 +24,10 @@ export class MapComponent implements OnInit {
     
   }
   */
-  ngOnInit() {
-    this.mapId = "my-map-container";
+  ngOnInit(){}
+
+  ngAfterViewInit() {
+    this.mapId = "map-container";
     this.center = [38.219606, -85.475043];
     this.initMap();
   }
